@@ -1,0 +1,5 @@
+services:
+  hadoop:
+    build:
+      context: .
+      dockerfile: hadoop/Dockerfile
