@@ -1,2 +1,6 @@
 tmp
 .idea
+results
+**/build/**
+**/.gradle/**
+**.iml
