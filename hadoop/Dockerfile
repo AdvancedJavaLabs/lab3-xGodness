@@ -55,7 +55,9 @@ COPY $BUILD_PATH/$JAR_NAME .
 COPY *.csv .
 
 COPY hadoop/start.sh start.sh
+COPY hadoop/start_benchmark.sh start_benchmark.sh
 RUN chmod +x start.sh
+RUN chmod +x start_benchmark.sh
 
 USER $HADOOP_USER
 
@@ -64,3 +66,4 @@ RUN ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa && \
     chmod 600 ~/.ssh/authorized_keys
 
 ENTRYPOINT ["./start.sh"]
+#ENTRYPOINT ["./start_benchmark.sh"]
