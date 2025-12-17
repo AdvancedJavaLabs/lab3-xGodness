@@ -1,0 +1,12 @@
+services:
+  hadoop:
+    build:
+      context: .
+      dockerfile: hadoop/Dockerfile
+    environment:
+      MAPRED_NUM_REDUCE_TASKS: $MAPRED_NUM_REDUCE_TASKS
+      SPLIT_MINSIZE: $SPLIT_MINSIZE
+    ports:
+      - "9870:9870"
+    volumes:
+      - ./results:/results
